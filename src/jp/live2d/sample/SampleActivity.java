@@ -21,19 +21,12 @@ import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.view.ViewGroup.*;
 import android.provider.Settings;
-import  jp.live2d.sample.check;
+  import  jp.live2d.sample.check.*;
 public class SampleActivity extends Activity
 {
   public static Context ctx;
   public WindowManager.LayoutParams p;
   //public LinearLayout root;
-  @Override 
-  public void onPostCreate(android.os.Bundle savedInstanceState) 
-  {
-    super.onPostCreate(savedInstanceState);
-
-  }
-
   @Override
   public void onCreate(Bundle savedInstanceState)
   { 
@@ -47,6 +40,7 @@ public class SampleActivity extends Activity
     //View live=View.inflate(this,R.layout.live,null);
    SampleGLSurfaceView v=new SampleGLSurfaceView(this);
     v.setOnTouchListener(new Touch());
+    v.setId(6666);
     root.addView(v);
     
     
@@ -61,7 +55,11 @@ public void add_btns(LinearLayout root)
      Switch s=new Switch(this);
      s.setText("是否可移动");
      s.setOnCheckedChangeListener(new check());
-     
+     Switch sa=new Switch(this);
+     sa.setText("打开关闭挂件模式");
+ //    sa.setOnCheckedChangeListener(new check());
+     sa.setId(2233);
      root.addView(s);
+     root.addView(sa);
   }
 }
