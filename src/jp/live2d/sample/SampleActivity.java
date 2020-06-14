@@ -21,7 +21,7 @@ import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.view.ViewGroup.*;
 import android.provider.Settings;
-  import  jp.live2d.sample.check.*;
+  import  jp.live2d.sample.*;
 public class SampleActivity extends Activity
 {
   public static Context ctx;
