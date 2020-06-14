@@ -7,6 +7,7 @@ public class Touch implements View.OnTouchListener
 {
   float pressx;
   float pressy;
+  
   @Override 
   public boolean onTouch(View p1,MotionEvent e)
   {

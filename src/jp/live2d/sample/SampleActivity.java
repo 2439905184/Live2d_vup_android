@@ -35,29 +35,31 @@ public class SampleActivity extends Activity
     ctx=getApplicationContext();
     LinearLayout root=(LinearLayout)findViewById(R.id.a);
      Live2D.init();
-    add_btns(root);
+    
     
     //View live=View.inflate(this,R.layout.live,null);
    SampleGLSurfaceView v=new SampleGLSurfaceView(this);
+   add_btns(root,v);
     v.setOnTouchListener(new Touch());
-    v.setId(6666);
+    
     root.addView(v);
+  //v.setVisibility(View.GONE);
     
     
    }
-public void add_btns(LinearLayout root)
+public void add_btns(LinearLayout root,SampleGLSurfaceView v)
 {
   Button button=new Button(this);
     button.setText("打开挂件模式");
     button.setOnClickListener(new click());
-     root.addView(button);
+    // root.addView(button);
      
      Switch s=new Switch(this);
      s.setText("是否可移动");
      s.setOnCheckedChangeListener(new check());
      Switch sa=new Switch(this);
-     sa.setText("打开关闭挂件模式");
- //    sa.setOnCheckedChangeListener(new check());
+     sa.setText("打开/关闭挂件模式");
+    sa.setOnCheckedChangeListener(new check(v));
      sa.setId(2233);
      root.addView(s);
      root.addView(sa);
