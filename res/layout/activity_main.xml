@@ -6,30 +6,36 @@
 	android:layout_height="match_parent"
 	android:id="@+id/a">
 
-
 	<LinearLayout
 		android:orientation="horizontal"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content">
-			<Button
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="动画编辑器"/>
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="动画编辑器"/>
 
 		<Button
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="size+"
-   			android:onClick="size_add" 
-     />
+			android:onClick="size_add"/>
 
 		<Button
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="大小-"
-   			android:onClick="size_jian"/>
+			android:onClick="size_jian"/>
 
 	</LinearLayout>
+
+	<Switch
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textOn="已开启面部捕捉"
+		android:textOff="已关闭面部捕捉"
+		android:text="面部捕捉"/>
 
 </LinearLayout>
 
