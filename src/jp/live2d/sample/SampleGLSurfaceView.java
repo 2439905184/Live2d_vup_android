@@ -35,7 +35,7 @@ public class SampleGLSurfaceView extends GLSurfaceView
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
 	{
 		super.onMeasure(widthMeasureSpec,heightMeasureSpec);
-  		setMeasuredDimension(100,100);
+  		setMeasuredDimension(400,400);
 	}
 
 	class SampleGLRenderer implements Renderer

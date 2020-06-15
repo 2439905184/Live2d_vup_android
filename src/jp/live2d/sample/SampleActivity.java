@@ -27,6 +27,7 @@ public class SampleActivity extends Activity
   public static Context ctx;
   public WindowManager.LayoutParams p;
   //public LinearLayout root;
+  public static SampleGLSurfaceView my_live_view;
   @Override
   public void onCreate(Bundle savedInstanceState)
   { 
@@ -40,17 +41,30 @@ public class SampleActivity extends Activity
     //View live=View.inflate(this,R.layout.live,null);
    SampleGLSurfaceView v=new SampleGLSurfaceView(this);
    add_btns(root,v);
-ViewGroup.LayoutParams liveViewLayout=  v.getLayoutParams();
-//  liveViewLayout.width=10;
-//  liveViewLayout.height=10;
+  //ViewGroup.LayoutParams liveViewLayout=  v.getLayoutParams();
 
-  //v.setLayoutParams(liveViewLayout);
     v.setOnTouchListener(new Touch());
-    
+    my_live_view=v;
     root.addView(v);
   //v.setVisibility(View.GONE);
     
     
+   }
+ public void size_add(View v)
+ {
+  int width= my_live_view.getMeasuredWidth();
+  tw.tip(width);
+   my_live_view.onMeasure(width+100,width+100);
+   }
+ public void size_jian(View v)
+ {
+   
+  int width= my_live_view.getMeasuredWidth();
+  tw.tip(width+"减去");
+  int result_width=width-500;
+  tw.tip(my_live_view);
+   my_live_view.onMeasure(result_width,result_width);
+ my_live_view.invalidate();
    }
 public void add_btns(LinearLayout root,SampleGLSurfaceView v)
 {
