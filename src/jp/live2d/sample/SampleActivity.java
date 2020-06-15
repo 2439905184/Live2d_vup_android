@@ -40,6 +40,11 @@ public class SampleActivity extends Activity
     //View live=View.inflate(this,R.layout.live,null);
    SampleGLSurfaceView v=new SampleGLSurfaceView(this);
    add_btns(root,v);
+ViewGroup.LayoutParams liveViewLayout=  v.getLayoutParams();
+//  liveViewLayout.width=10;
+//  liveViewLayout.height=10;
+
+  //v.setLayoutParams(liveViewLayout);
     v.setOnTouchListener(new Touch());
     
     root.addView(v);
@@ -49,18 +54,14 @@ public class SampleActivity extends Activity
    }
 public void add_btns(LinearLayout root,SampleGLSurfaceView v)
 {
-  Button button=new Button(this);
-    button.setText("打开挂件模式");
-    button.setOnClickListener(new click());
-    // root.addView(button);
-     
+ 
      Switch s=new Switch(this);
      s.setText("是否可移动");
      s.setOnCheckedChangeListener(new check());
      Switch sa=new Switch(this);
      sa.setText("打开/关闭挂件模式");
     sa.setOnCheckedChangeListener(new check(v));
-     sa.setId(2233);
+    
      root.addView(s);
      root.addView(sa);
   }

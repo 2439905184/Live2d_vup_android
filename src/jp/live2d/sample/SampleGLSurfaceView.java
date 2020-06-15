@@ -31,6 +31,12 @@ public class SampleGLSurfaceView extends GLSurfaceView
 		setRenderer( renderer ) ;
 	}
 
+@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+	{
+		super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+  		setMeasuredDimension(100,100);
+	}
 
 	class SampleGLRenderer implements Renderer
 	{
@@ -48,13 +54,14 @@ public class SampleGLSurfaceView extends GLSurfaceView
 		{
 			gl.glMatrixMode(GL10.GL_MODELVIEW ) ;
 			gl.glLoadIdentity() ;
-			gl.glClear(GL10.GL_COLOR_BUFFER_BIT );
-
+			gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+	    //	gl.glScalef(0.5f,0.5f,0.5f);
+	//		gl.glViewport(0,0,500,500);
 			double t = (UtSystem.getUserTimeMSec()/1000.0) * 2 * Math.PI  ;
 			double cycle=3.0;
 			double sin=Math.sin( t/cycle );
 			live2DModel.setParamFloat( "PARAM_ANGLE_X" , (float) (30 * sin) ) ;
-
+			
 			live2DModel.setGL( gl ) ;
 
 			live2DModel.update() ;
